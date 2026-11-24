@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+#define MAX 6
+int box[MAX];
+int top = -1;
+
+// Traversal and display function
+void display() {
+    // 1. Check if the stack has any elements to traverse
+    if (top == -1) {
+        printf("Stack is empty. Nothing to display.\n");
+        return;
+    }
+    
+    // 2. Traverse from the 'top' index down to '0' (LIFO order)
+    printf("Traversing stack (Top to Bottom): ");
+    for (int i = top; i >= 0; i--) {
+        printf("%d ", box[i]); // Display the current element
+    }
+    printf("\n");
+}
+
+int main() {
+    // Manually pre-filling the stack to demonstrate traversal
+    box[0] = 10;
+    box[1] = 20;
+    box[2] = 30;
+    box[3] = 40;
+    
+    // Set top to index 3 (4 elements total in the stack)
+    top = 3; 
+
+    // Execute the traversal and display
+    display();
+
+    return 0;
+}
